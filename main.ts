@@ -125,15 +125,15 @@ export default class VimIMSwitchPlugin extends Plugin {
 
         // according to  https://github.com/jiyee/obsidian-vim-im-switch-plugin/pull/1/commits/033db23b3afc151d46ada5f7244cdb8bcba7c9bb
         // we should get the status of IM before we switch it.
-        await this.getFcitxRemoteStatus();
+        // await this.getFcitxRemoteStatus();
         if (cm.mode == "normal" || cm.mode == "visual") {
-            if (this.imStatus == IMStatus.Active) {
-                await this.deactivateIM();
-            }
+            // if (this.imStatus == IMStatus.Active) {
+            await this.deactivateIM();
+            // }
         } else if (cm.mode == "insert" || cm.mode == "replace") {
-            if (this.imStatus == IMStatus.Inactive && this.settings.IMSwitch_when_insert_mode == true) {
-                await this.activateIM();
-            }
+            // if (this.imStatus == IMStatus.Inactive && this.settings.IMSwitch_when_insert_mode == true) {
+            await this.activateIM();
+            // }
         }
     }
 
